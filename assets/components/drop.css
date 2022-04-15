@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:host {
+  --paddingH: 8px;
+  --hrBorderWidth: 2px;
+  --transitionTime: 400ms;
+  position: relative;
+  height: 100%;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2px;
+  height: inherit;
+  font-family: var(--fontFamily0);
+  font-size: var(--fontSizeL);
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+  padding: 0 var(--paddingH);
+  margin 0;
+  transition: background-color var(--transitionTime);
+}
+
+a:hover {
+  background-color: var(--themeColor);
+}
+
+.drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  width: max-content;
+  background-color: var(--white);
+  z-index: var(----zIndexDrop);
+  box-shadow: var(--boxShadow2);
+  opacity: 0;
+  transition: opacity var(--transitionTime);
+}
+
+.drop.right-align {
+  left: -100%;
+}
+
+.drop.peak,
+.drop.open {
+  opacity: 1;
+}
+
+hr {
+  height: 0;
+  background-color: var(--white);
+  border: var(--hrBorderWidth) solid var(--white);
+  margin-top: calc(-1*var(--hrBorderWidth));
+  transform: scaleX(0);
+}
+
+.drop.open hr {
+  transition: transform var(--transitionTime) ease-out;
+  transform: scaleX(1) !important;
+}

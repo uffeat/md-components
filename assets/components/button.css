@@ -1,0 +1,46 @@
+button {
+  overflow: hidden;
+  background-color: var(--themeColor);
+  color: var(--white);
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  outline: none;
+}
+
+button:hover {
+  background-color: var(--themeColorAccent);
+}
+
+button {
+  /* Enable position absolute for span ripple element: */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 400ms;
+}
+
+span.ripple {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Make ripples circular: */
+  border-radius: 50%;
+  /* Ensure that each ripple emerges from nothing: */
+  transform: scale(0);
+  animation: rippleEffect 600ms linear;
+  /* top, left, width, and height are set from code. */
+}
+
+@keyframes rippleEffect {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

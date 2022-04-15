@@ -1,0 +1,87 @@
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  color: var(--baseColor, white);
+  background-color: var(--themeColor, seagrean);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+header > .top {
+  display: flex;
+  flex-direction: row;
+}
+
+header > .top > .right {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  padding-right: 32px;
+  margin-left: auto;
+}
+
+header > h1 {
+  flex-grow: 1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--fontFamilyDisplay); 
+  font-size: 64px;
+  transform: scale(1);
+  opacity: 1;
+  /*transition: transform 1000ms, opacity 2000ms;*/
+  /*animation-name: spin;*/
+  animation-duration: 3000ms;
+  animation-iteration-count:infinite;
+}
+
+header > h1.hidden {
+  transform: scale(0);
+  opacity: 0;
+
+}
+
+@keyframes spin {
+  from   {transform: scale(0.3) rotateX(180deg);}
+  to  {transform: scale(1) rotatex(0deg);}
+  /*
+  0%   {transform: scale(0) rotateX(0deg);}
+  25%  {transform: scale(0.33) rotatex(45deg);}
+  50%  {transform: scale(0.67) rotatex(90deg);}
+  100% {transform: scale(1) rotatex(180deg);}
+  */
+}
+
+
+
+
+
+nav.lower {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: red;
+}
+
+main {
+  flex-grow: 1;
+  background-color: cornsilk;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  min-height: 70px;
+  background-color: seashell;
+}
