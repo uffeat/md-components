@@ -5,7 +5,7 @@ class Dot extends Component {
   #size;
   constructor() {
     super()
-    
+
     //<link rel="stylesheet" href="assets/components/dot.css">
 
     this.html = `
