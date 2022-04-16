@@ -7,6 +7,7 @@
 	"settings": {
 		"files.autoSave": "afterDelay",
 		"editor.fontFamily": "'JetBrains Mono', 'monospace'",
-		"editor.tabSize": 2
+		"editor.tabSize": 2,
+		"editor.fontSize": 14
 	}
 }
