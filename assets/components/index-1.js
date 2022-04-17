@@ -27,7 +27,7 @@ class Index1 extends Component {
       display: flex;
       align-items: center;
       color: var(--baseColor, white);
-      background-color: var(--themeColor, red);
+      background-color: var(--primaryColor400, blue);
       padding: 0 32px;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
@@ -44,7 +44,7 @@ class Index1 extends Component {
     }
     
     .menu:hover {
-      background-color: var(--themeColorAccent, pink);
+      background-color: var(--primaryColor500, pink);
     }
 
     .menu > svg {
@@ -77,6 +77,7 @@ class Index1 extends Component {
       font-weight: 600;
       padding: 0;
       margin: 0 0 0 4px;
+      color: var(--baseColor, white);
     }
     
     slot[name="top"] {

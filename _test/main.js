@@ -14,9 +14,13 @@
 
 
 
-//import * as components from '../components.js';
-import * as components from 'https://uffeat.github.io/md-components/components.js';
+import * as components from '../components.js';
+//import * as components from 'https://uffeat.github.io/md-components/components.js';
+
+const index1 = new components.Index1()
+index1.logo = './_test/logo.svg'
+index1.title = "MD Components Test"
 
 const dot1 = new components.Dot()
 
-document.body.appendChild(dot1)
+document.body.appendChild(index1)
