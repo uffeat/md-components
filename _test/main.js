@@ -14,13 +14,19 @@
 
 
 
-//import * as components from '../components.js';
-import * as components from 'https://uffeat.github.io/md-components/components.js';
+import * as components from '../components.js';
+//import * as components from 'https://uffeat.github.io/md-components/components.js';  // Always latest release (requires release).
+//import * as components from 'https://cdn.jsdelivr.net/gh/uffeat/md-components@v1-alpha/components.js';
 
-const index1 = new components.Index1()
+
+const index1 = new components.Index1({closeOnClick: true})
 index1.logo = './_test/logo.svg'
 index1.title = "MD Components Test"
+document.body.appendChild(index1)
 
 const dot1 = new components.Dot()
+index1.addComponent(dot1, 'main')
 
-document.body.appendChild(index1)
+dot1.addEventListener('click', event => index1.togglePanel())
+
+

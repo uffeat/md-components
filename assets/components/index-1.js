@@ -3,8 +3,10 @@ import { Component } from '../base/component.js';
 
 /* Implements index component with left slide panel. */
 class Index1 extends Component {
-  constructor() {
-    super({});
+  #closeOnClick;
+  constructor({closeOnClick=false}) {
+    super();
+    this.#closeOnClick = closeOnClick
     this.html = `
     <style>    
     :host {
@@ -174,7 +176,7 @@ class Index1 extends Component {
           <img src="" alt="" class="logo">
           <h2 class="title">Title</h2>
         </a>
-        <slot name="top" class="top close"></slot>
+        <slot name="top"></slot>
       </header>
       <div class="side">
         <button class="close">
@@ -182,9 +184,9 @@ class Index1 extends Component {
             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
           </svg>
         </button>        
-        <slot name="side" class="close"></slot>
+        <slot name="side"></slot>
       </div>
-      <main class="close">
+      <main>
         <slot name="main"></slot>
       </main>
       <footer>
@@ -192,23 +194,28 @@ class Index1 extends Component {
       </footer>
     <div>
     `;
-    // HTML elements:
+    if (this.#closeOnClick === true) {
+      this._root.querySelector('main').classList.add('close')
+      this._root.querySelector('slot[name="top"]').classList.add('close')
+      this._root.querySelector('slot[name="side"]').classList.add('close')
+    }
+    
+
+
     this._logoElement = this._root.querySelector('.logo');
     this._titleElement = this._root.querySelector('.title');
 
     this._sideElement = this._root.querySelector('.side');
 
-    this._sideCloseElements = this._root.querySelectorAll('.close');
-    this._sideToggleElements = this._root.querySelectorAll('.toggle');
 
     // Events:
-    this._sideCloseElements.forEach(element => {
+    this._root.querySelectorAll('.close').forEach(element => {
       element.addEventListener('click', event => {
         this.closePanel();
       });
     });
 
-    this._sideToggleElements.forEach(element => {
+    this._root.querySelectorAll('.toggle').forEach(element => {
       element.addEventListener('click', event => {
         this.togglePanel();
       });
