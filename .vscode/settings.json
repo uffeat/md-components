@@ -1,0 +1,7 @@
+{
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Inconsolata', 'monospace'",
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 15,
+  "workbench.colorTheme": "Hawaii (rainglow)"
+}

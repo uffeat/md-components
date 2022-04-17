@@ -1,3 +1,4 @@
+import { settings } from '../settings.js'
 import { Component } from '../base/component.js';
 
 /* Component for simple filled circle. */
@@ -5,13 +6,15 @@ class Dot extends Component {
   #size;
   constructor() {
     super()
-    
-    //<link rel="stylesheet" href="assets/components/dot.css">
-
     this.html = `
-    <link rel="stylesheet" href="assets/components/dot.css">
     <style>
-      
+      span {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: var(--primaryColor400, red);
+      }
     </style>
     <span></span>
     `
@@ -41,7 +44,7 @@ class Dot extends Component {
   }
 }
 
-const componentTag = `x-dot`
+const componentTag = `${settings.prefix}-dot`;
 customElements.get(componentTag) || customElements.define(componentTag, Dot)
 
 export { Dot };
